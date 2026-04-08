@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>やさしいタスク共有アプリ</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1>やさしいタスク共有アプリ</h1>
+      <p>
+        スマホやPCが苦手な方でも使えるように、<strong>画面の選択肢を最小限</strong>にしたタスク管理です。
+      </p>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <h2>1. 利用者を選ぶ</h2>
+        <p class="help">2人だけで使います。いま操作する人を選んでください。</p>
+        <div class="row">
+          <label for="activeUser">操作中の利用者</label>
+          <select id="activeUser" aria-label="操作中の利用者を選択">
+            <option value="you">あなた</option>
+            <option value="partner">パートナー</option>
+          </select>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>2. タブ（項目）を作る</h2>
+        <p class="help">
+          例：社会 / プライベート。タブごとにタスクを整理できます。
+        </p>
+        <div class="row">
+          <input id="newCategoryName" type="text" placeholder="新しいタブ名（例：社会）" />
+          <button id="addCategoryBtn">タブを追加</button>
+        </div>
+        <div id="categoryTabs" class="tabs" aria-label="カテゴリタブ"></div>
+      </section>
+
+      <section class="card">
+        <h2>3. タスクを追加する</h2>
+        <p class="help">
+          タスクごとに「共有する / しない」を選べます（タブ単位ではなく、タスク単位）。
+        </p>
+        <div class="task-form">
+          <input id="taskTitle" type="text" placeholder="タスク名（例：社会貢献イベントの申込）" />
+          <label>
+            公開範囲
+            <select id="taskVisibility">
+              <option value="private">自分だけ見る</option>
+              <option value="shared">2人で共有する</option>
+            </select>
+          </label>
+          <button id="addTaskBtn">タスクを追加</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>4. タスク一覧</h2>
+        <p class="help">
+          共有タスクは2人とも見られ、完了状態も確認できます。非共有タスクは作成者だけ見られます。
+        </p>
+        <ul id="taskList" class="task-list"></ul>
+      </section>
+    </main>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
