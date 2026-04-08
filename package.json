@@ -1,0 +1,11 @@
+{
+  "name": "easy-task-app",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test:unit": "node tests/unit.test.js",
+    "test:integration": "node tests/integration.test.js",
+    "check:static": "node --check app.js && node --check taskCore.js"
+  }
+}
